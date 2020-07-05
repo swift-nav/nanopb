@@ -95,3 +95,5 @@ if(nanopb_BUILD_RUNTIME)
     install(FILES pb.h pb_common.h pb_encode.h pb_decode.h
         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 endif()
+
+include(extra/FindNanopb.cmake)
