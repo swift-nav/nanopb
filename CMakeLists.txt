@@ -71,6 +71,9 @@ if(nanopb_BUILD_RUNTIME)
             pb_encode.c
             pb_decode.h
             pb_decode.c)
+        target_include_directories(protobuf-nanopb
+          PUBLIC
+          $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>)
         set_target_properties(protobuf-nanopb PROPERTIES
             SOVERSION ${nanopb_SOVERSION})
         install(TARGETS protobuf-nanopb EXPORT nanopb-targets
