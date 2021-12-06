@@ -15,7 +15,7 @@
 
 /* Define this if your CPU / compiler combination does not support
  * unaligned memory access to packed structures. */
-/* #define PB_NO_PACKED_STRUCTS 1 */
+#define PB_NO_PACKED_STRUCTS 1
 
 /* Increase the number of required fields that are tracked.
  * A compiler warning will tell if you need this. */
