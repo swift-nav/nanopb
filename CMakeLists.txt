@@ -145,6 +145,16 @@ if(nanopb_BUILD_RUNTIME)
             $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/nanopb>
             $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
         )
+        # without this, the compilations fails due to C99 asserts
+        target_compile_definitions(protobuf-nanopb PUBLIC
+            PB_NO_STATIC_ASSERT
+        )
+        if(NOT MSVC)
+            # This is needed to avoid warnings about switch statements on enum types
+            target_compile_options(protobuf-nanopb PUBLIC
+                -Wno-switch-enum
+            )
+        endif()
 
     configure_file(extra/nanopb-config-version.cmake.in
         nanopb-config-version.cmake @ONLY)
