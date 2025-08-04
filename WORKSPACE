@@ -1,4 +1,4 @@
-workspace(name = "com_github_nanopb_nanopb")
+workspace(name = "nanopb")
 
 load("//extra/bazel:nanopb_deps.bzl", "nanopb_deps")
 
